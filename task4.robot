@@ -64,7 +64,7 @@ Buy rise contract
 
 
 *** Test Cases ***
-Buy lower contract
+Check relative barrier error
     Login To Deriv
     Switch to Virtual Account
     Select underlying contract
@@ -75,15 +75,18 @@ Buy lower contract
     Click Element    //div[@id="dt_contract_high_low_item"]
     Wait Until Page Contains Element    //span[@name='contract_type' and contains(@value,'high_low')]    30
     Textfield Should Contain    //input[@class='dc-input__field']    10
-    Press Keys    //input[@id='dt_amount_input']    CTRL+a+BACKSPACE
+    Press Keys    //input[@class='dc-input__field']    CTRL+a+BACKSPACE
     Input Text    //input[@class='dc-input__field']    4
-    Click Element    //*[contains(@id,'dt_barrier_1_input')]
-    Input Text    //*[contains(@id,'dt_barrier_1_input')]    '+0.01'
-    Page Should Contain Element    //button[@id='dc_stake_toggle_item' and contains(@class,'--active')]
+    Click Element   //input[@id='dt_barrier_1_input']
+    Press Keys    //input[@id='dt_barrier_1_input']    CTRL+a+BACKSPACE
+    Input Text    //input[@id='dt_barrier_1_input']    '+0.01'
     Click Element    //button[@id='dc_payout_toggle_item' and contains(@class,'button')]
     Press Keys    //input[@id='dt_amount_input']    CTRL+a+BACKSPACE
     Input Text    //input[@id='dt_amount_input']    10
     Wait Until Page Contains Element    //*[contains(@data-tooltip,'Contracts more than')]    30
     Page Should Contain Element    //*[contains(@data-tooltip,'Contracts more than')]    
+    Page Should Contain Element    //button[@id='dt_purchase_put_button' and contains(@class,'--disabled')]
+
+
 
 
