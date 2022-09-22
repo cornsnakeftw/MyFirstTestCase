@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on linux)" generated="20220922 17:42:38.990" rpa="false" schemaversion="3">
+<suite id="s1" name="Task4" source="/home/marianne/Desktop/myfirsttestcase/task4.robot">
+<test id="s1-t1" name="Buy lower contract" line="67">
+<kw name="Login To Deriv">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://app.deriv.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220922 17:42:39.075" level="INFO">Opening browser 'Chrome' to base url 'https://app.deriv.com/'.</msg>
+<status status="PASS" starttime="20220922 17:42:39.075" endtime="20220922 17:43:20.441"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20220922 17:43:20.514" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.102)
+Stacktrace:
+#0 0x56463cc93693 &lt;unknown&gt;
+#1 0x56463ca8c9db &lt;unknown&gt;
+#2 0x56463ca7c904 &lt;unknown&gt;
+#3 0x56463ca6d301 &lt;unknown&gt;
+#4 0x56463ca7208d &lt;unknown&gt;
+#5 0x56463ca772b6 &lt;unknown&gt;
+#6 0x56463ca8e072 &lt;unknown&gt;
+#7 0x56463caf5ad8 &lt;unknown&gt;
+#8 0x56463cae2743 &lt;unknown&gt;
+#9 0x56463cab8533 &lt;unknown&gt;
+#10 0x56463cab9715 &lt;unknown&gt;
+#11 0x56463cce37bd &lt;unknown&gt;
+#12 0x56463cce6bf9 &lt;unknown&gt;
+#13 0x56463ccc8f2e &lt;unknown&gt;
+#14 0x56463cce79b3 &lt;unknown&gt;
+#15 0x56463ccbce4f &lt;unknown&gt;
+#16 0x56463cd06ea8 &lt;unknown&gt;
+#17 0x56463cd07052 &lt;unknown&gt;
+#18 0x56463cd2171f &lt;unknown&gt;
+#19 0x7f62947adb43 &lt;unknown&gt;
+</msg>
+<msg timestamp="20220922 17:43:20.514" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.102)
+Stacktrace:
+#0 0x56463cc93693 &lt;unknown&gt;
+#1 0x56463ca8c9db &lt;unknown&gt;
+#2 0x56463ca7c904 &lt;unknown&gt;
+#3 0x56463ca6d301 &lt;unknown&gt;
+#4 0x56463ca7208d &lt;unknown&gt;
+#5 0x56463ca772b6 &lt;unknown&gt;
+#6 0x56463ca8e072 &lt;unknown&gt;
+#7 0x56463caf5ad8 &lt;unknown&gt;
+#8 0x56463cae2743 &lt;unknown&gt;
+#9 0x56463cab8533 &lt;unknown&gt;
+#10 0x56463cab9715 &lt;unknown&gt;
+#11 0x56463cce37bd &lt;unknown&gt;
+#12 0x56463cce6bf9 &lt;unknown&gt;
+#13 0x56463ccc8f2e &lt;unknown&gt;
+#14 0x56463cce79b3 &lt;unknown&gt;
+#15 0x56463ccbce4f &lt;unknown&gt;
+#16 0x56463cd06ea8 &lt;unknown&gt;
+#17 0x56463cd07052 &lt;unknown&gt;
+#18 0x56463cd2171f &lt;unknown&gt;
+#19 0x7f62947adb43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20220922 17:43:20.441" endtime="20220922 17:43:20.515"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[@class='btn-purchase__text_wrapper' and contains(.,'Fall')]</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.515" endtime="20220922 17:43:20.516"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>dt_login_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.516" endtime="20220922 17:43:20.516"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//input[@type='email']</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.516" endtime="20220922 17:43:20.516"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@type='email']</arg>
+<arg>marianne+5@besquare.com.my</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.516" endtime="20220922 17:43:20.516"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@type='password']</arg>
+<arg>Abcd1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.516" endtime="20220922 17:43:20.516"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.516" endtime="20220922 17:43:20.516"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>dt_core_account-info_acc-info</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.516" endtime="20220922 17:43:20.516"/>
+</kw>
+<status status="FAIL" starttime="20220922 17:42:39.075" endtime="20220922 17:43:20.517"/>
+</kw>
+<kw name="Switch to Virtual Account">
+<status status="NOT RUN" starttime="20220922 17:43:20.517" endtime="20220922 17:43:20.517"/>
+</kw>
+<kw name="Select underlying contract">
+<status status="NOT RUN" starttime="20220922 17:43:20.517" endtime="20220922 17:43:20.517"/>
+</kw>
+<kw name="Select contract type">
+<status status="NOT RUN" starttime="20220922 17:43:20.517" endtime="20220922 17:43:20.517"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[@class='btn-purchase__text_wrapper' and contains(.,'Rise')]</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.517" endtime="20220922 17:43:20.517"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@class='contract-type-widget__display']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.517" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[@id="dt_contract_high_low_item"]</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id="dt_contract_high_low_item"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//span[@name='contract_type' and contains(@value,'high_low')]</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Textfield Should Contain" library="SeleniumLibrary">
+<arg>//input[@class='dc-input__field']</arg>
+<arg>10</arg>
+<doc>Verifies text field ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//input[@id='dt_amount_input']</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@class='dc-input__field']</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[contains(@id,'dt_barrier_1_input')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.518"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[contains(@id,'dt_barrier_1_input')]</arg>
+<arg>'+0.01'</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.518" endtime="20220922 17:43:20.519"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//button[@id='dc_stake_toggle_item' and contains(@class,'--active')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.519" endtime="20220922 17:43:20.519"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='dc_payout_toggle_item' and contains(@class,'button')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.519" endtime="20220922 17:43:20.519"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//input[@id='dt_amount_input']</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.519" endtime="20220922 17:43:20.519"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id='dt_amount_input']</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.519" endtime="20220922 17:43:20.519"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[contains(@data-tooltip,'Contracts more than')]</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.519" endtime="20220922 17:43:20.519"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[contains(@data-tooltip,'Contracts more than')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20220922 17:43:20.519" endtime="20220922 17:43:20.519"/>
+</kw>
+<status status="FAIL" starttime="20220922 17:42:39.074" endtime="20220922 17:43:20.520">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.102)
+Stacktrace:
+#0 0x56463cc93693 &lt;unknown&gt;
+#1 0x56463ca8c9db &lt;unknown&gt;
+#2 0x56463ca7c904 &lt;unknown&gt;
+#3 0x56463ca6d301 &lt;unknown&gt;
+#4 0x56463ca7208d &lt;unknown&gt;
+#5 0x56463ca772b6 &lt;unknown&gt;
+#6 0x56463ca8e072 &lt;unknown&gt;
+#7 0x56463caf5ad8 &lt;unknown&gt;
+#8 0x56463cae2743 &lt;unknown&gt;
+#9 0x56463cab8533 &lt;unknown&gt;
+#10 0x56463cab9715 &lt;unknown&gt;
+#11 0x56463cce37bd &lt;unknown&gt;
+#12 0x56463cce6bf9 &lt;unknown&gt;
+#13 0x56463ccc8f2e &lt;unknown&gt;
+#14 0x56463cce79b3 &lt;unknown&gt;
+#15 0x56463ccbce4f &lt;unknown&gt;
+#16 0x56463cd06ea8 &lt;unknown&gt;
+#17 0x56463cd07052 &lt;unknown&gt;
+#18 0x56463cd2171f &lt;unknown&gt;
+#19 0x7f62947adb43 &lt;unknown&gt;
+</status>
+</test>
+<status status="FAIL" starttime="20220922 17:42:38.991" endtime="20220922 17:43:20.520"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Task4">Task4</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220922 17:43:20.514" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.102)
+Stacktrace:
+#0 0x56463cc93693 &lt;unknown&gt;
+#1 0x56463ca8c9db &lt;unknown&gt;
+#2 0x56463ca7c904 &lt;unknown&gt;
+#3 0x56463ca6d301 &lt;unknown&gt;
+#4 0x56463ca7208d &lt;unknown&gt;
+#5 0x56463ca772b6 &lt;unknown&gt;
+#6 0x56463ca8e072 &lt;unknown&gt;
+#7 0x56463caf5ad8 &lt;unknown&gt;
+#8 0x56463cae2743 &lt;unknown&gt;
+#9 0x56463cab8533 &lt;unknown&gt;
+#10 0x56463cab9715 &lt;unknown&gt;
+#11 0x56463cce37bd &lt;unknown&gt;
+#12 0x56463cce6bf9 &lt;unknown&gt;
+#13 0x56463ccc8f2e &lt;unknown&gt;
+#14 0x56463cce79b3 &lt;unknown&gt;
+#15 0x56463ccbce4f &lt;unknown&gt;
+#16 0x56463cd06ea8 &lt;unknown&gt;
+#17 0x56463cd07052 &lt;unknown&gt;
+#18 0x56463cd2171f &lt;unknown&gt;
+#19 0x7f62947adb43 &lt;unknown&gt;
+</msg>
+</errors>
+</robot>
