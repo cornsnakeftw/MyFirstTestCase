@@ -139,15 +139,26 @@ Minimum stake is 1 USD
     Input Text    ${multiplier_stake_amount_input}    0
     Wait Until Page Contains Element    //*[contains(@data-tooltip,'1')]    30
 Plus button of take profit field increase the stake value by 1 USD
-    Click Element    ${take_profit}
-    Wait Until Element Is Visible    ${take_profit input field}
-    Click Element    ${take_profit plus button}
-    ${added 1 USD}=    Set Variable If    ${take_profit input field value} > 0
     
-Minus button of take profit decrease the stake valye by 1 USD
+    Click Element    ${take_profit}
+    Wait Until Page Contains Element    ${take_profit input field}
+    Press Keys    ${take_profit input field}    CTRL+a+BACKSPACE
+    Input Text    ${take_profit input field}    0
+    Click Element    ${take_profit plus button}
+    Element Attribute Value Should Be    ${take_profit input field}    value    1
 
+Minus button of take profit decrease the stake value by 1 USD    
+    
+    Wait Until Page Contains Element    ${take_profit input field}
+    Press Keys    ${take_profit input field}    CTRL+a+BACKSPACE
+    Input Text    ${take_profit input field}    1
+    Click Element    ${take_profit minus button}
+    Element Attribute Value Should Be    ${take_profit input field}    value    0
+    
 
 Deal cancellation duration only has certain options
+    Click Element    ${deal_cancellation}
+    
 
 
 *** Test Cases ***
@@ -170,8 +181,8 @@ Check multiplier contract parameter
     # Verifying deal cancellation fee more expensive than stake value
     Maximum stake is 2000 USD
     Minimum stake is 1 USD
-    #Plus button of take profit field increase the stake value by 1 USD
-    #Minus button of take profit decrease the stake valye by 1 USD
+    Plus button of take profit field increase the stake value by 1 USD
+    Minus button of take profit decrease the stake value by 1 USD
     #Deal cancellation duration only has certain options
 
     
