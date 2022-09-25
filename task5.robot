@@ -20,8 +20,16 @@ ${deal cancellation fee}    //*[contains(@class,'trade-container__price-info-cur
 ${take_profit plus button}    //button[@id='dc_take_profit_input_add']
 ${take_profit minus button}    //button[@id='dc_take_profit_input_sub']
 ${take_profit input field value}    //input[@id='dc_take_profit_input' and contains(@value,'')]
-    
-
+${dc dropdown 60 minutes}    //*[@name='cancellation_duration'  and contains(text(),'60 minutes')]    
+${dc default selection 60 minutes}    //*[@id='60m' and @class='dc-list__item dc-list__item--selected']
+${dc default unselected 30 minutes}    //*[@id='30m' and @class='dc-list__item']
+${dc default unselected 15 minutes}    //*[@id='15m' and @class='dc-list__item']
+${dc default unselected 10 minutes}    //*[@id='10m' and @class='dc-list__item']
+${dc default unselected 5 minutes}    //*[@id='5m' and @class='dc-list__item']
+${dc multiply up id}    //*[contains(@id,'dt_purchase_multup_price')]
+${dc multiply down id}  //*[contains(@id,'dt_purchase_multdown_price')]
+${dc multiply up cancellation fee}    //*[@id="dt_purchase_multup_price"]/div/div[2]/span
+${dc multiply down cancellation fee}    //*[@id="dt_purchase_multdown_price"]/div/div[2]/span
 
 *** Keywords ***
 Login To Deriv 
@@ -115,13 +123,23 @@ Verifying multiplier options
     Element Should Contain    //div[@class='dc-list__item' and contains(@id,'200')]    x200
     
     
-Verifying deal cancellation fee more expensive than stake value
+Deal cancellation fee should correlate with the stake value
     Click Element    ${deal_cancellation}
     Wait Until Page Contains Element    ${checked dc_checkbox}
     Click Element    ${multiplier_stake_amount_input}
     Press Keys    ${multiplier_stake_amount_input}    CTRL+a+BACKSPACE
     Input Text    ${multiplier_stake_amount_input}    10
     Wait Until Element Is Visible    ${deal cancellation fee}
+    Page Should Contain Element    ${dc multiply up id}
+    Page Should Contain Element    ${dc multiply down id}
+    Wait Until Page Contains Element    ${dc multiply up cancellation fee}
+    Page Should Contain Element    ${dc multiply up cancellation fee}
+    Page Should Contain Element    ${dc multiply down cancellation fee}
+    
+    # ${dc multiply up cancellation fee}    Convert To Integer    ${dc multiply up cancellation fee}
+    # ${dc multiply down cancellation fee}    Convert To String    ${dc multiply down cancellation fee}
+    Should Be Equal   ${dc multiply up cancellation fee}    ${dc multiply down cancellation fee}
+    
     # Should Be Equal    ${deal cancellation fee}
     # ${multiplier_stake_amount_input}    Convert To String    ${multiplier_stake_amount_input}
     # Should Be True ${}
@@ -158,6 +176,15 @@ Minus button of take profit decrease the stake value by 1 USD
 
 Deal cancellation duration only has certain options
     Click Element    ${deal_cancellation}
+    Wait Until Page Contains Element    ${dc dropdown 60 minutes}
+    Page Should Contain Element    ${dc dropdown 60 minutes}
+    Click Element    ${dc dropdown 60 minutes}
+    Wait Until Element Is Visible    ${dc default selection 60 minutes}
+    Page Should Contain Element    ${dc default selection 60 minutes}
+    Page Should Contain Element    ${dc default unselected 30 minutes}
+    Page Should Contain Element    ${dc default unselected 15 minutes}
+    Page Should Contain Element    ${dc default unselected 10 minutes}
+    Page Should Contain Element    ${dc default unselected 5 minutes}
     
 
 
@@ -178,12 +205,12 @@ Check multiplier contract parameter
     Check stop loss checkbox
     Check deal cancellation checkbox
     Verifying multiplier options
-    # Verifying deal cancellation fee more expensive than stake value
-    Maximum stake is 2000 USD
-    Minimum stake is 1 USD
-    Plus button of take profit field increase the stake value by 1 USD
-    Minus button of take profit decrease the stake value by 1 USD
-    #Deal cancellation duration only has certain options
+    Deal cancellation fee should correlate with the stake value
+    # Maximum stake is 2000 USD
+    # Minimum stake is 1 USD
+    # Plus button of take profit field increase the stake value by 1 USD
+    # Minus button of take profit decrease the stake value by 1 USD
+    # Deal cancellation duration only has certain options
 
     
 
