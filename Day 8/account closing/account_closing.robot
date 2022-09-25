@@ -131,8 +131,8 @@ Check prompt message
     # Click Element    //*[contains(@class,'dc-btn--secondary dc-btn__large')]//child::span[contains(text(),'Go Back')]
     # Element Should Be Visible    ${input field other trading platform}
     # Click Element    ${continue button}
-    Wait Until Element Is Visible    //*[contains(@class,'dc-btn--primary')]//child::span[contains(text(),'Close account')]
-    Click Element    //*[contains(@class,'dc-btn--primary')]//child::span[contains(text(),'Close account')]   
+    Wait Until Element Is Visible    //*[contains(text(),'Close account')]
+    Click Element    //*[@class="dc-btn dc-btn__effect dc-btn--primary dc-btn__large" and contains(.,'Close account')] 
 
 *** Test Cases ***
 Verifying close your account page
